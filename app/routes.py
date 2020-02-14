@@ -17,9 +17,7 @@ def index():
                 cityID=city.city_id
                 for forecast in forecasts:
                     if forecast.city_id == cityID:
-                        flash(f'{forecast.forecast}')
-            else:
-                flash(f'That city is not in our database ')
+                        flash(f'The forecast for {city.city} is {forecast.forecast}. Written on the {forecast.forecast_datetime}')
 
         return redirect(url_for('index'))
     return render_template('index.html', cities=cities, forecasts=forecasts, form=form)
