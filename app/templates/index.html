@@ -6,12 +6,20 @@
 	<p>This is a dummy paragraph.</p>
 	</div>
 </section>
-    <div class="search-form">
-		<h1> Search Forecasts Here </h1>
-		<form>
-		<input type="Search" class="input-box" placeholder="Enter ForecastID or City here">
-		<hr>
-		<button type="button" class="search-btn">Search</button>
+    <div class="sign-up-form">
+		<form method="POST" action="">
+            <h1> Search Here </h1>
+		    <hr>
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+               <div class="form-group">
+                   {{ form.city(class="input-box", placeholder="Enter City Here") }}
+               </div>
+            </fieldset>
+            <hr>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
 		</form>
 	</div>
 {% endblock %}
